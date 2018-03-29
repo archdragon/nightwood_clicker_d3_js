@@ -2,6 +2,7 @@ body {
   color: #fff;
   background-image: linear-gradient(-225deg, #00A1BF 0%, #0D6FC1 48%, #524EA1 100%);
   font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
 }
 
 .logo {
@@ -15,4 +16,36 @@ body {
   cursor: pointer;
   display: inline-block;
   padding: 8px 12px;
+  user-select: none;
+}
+
+#base-actions {
+  text-align: center;
+  .btn {
+    padding: 12px 18px;
+    font-size: 1.25rem;
+  }
+}
+
+#drawings {
+  width: 100%;
+  height: 250px;
+
+  svg {
+    text.title {
+      fill: #fff;
+      text-anchor: middle;
+    }
+
+    text.desc {
+      fill: #fff;
+      opacity: 0.75;
+      text-anchor: middle;
+    }
+  }
+}
+
+#main {
+  width: 900px;
+  margin: 0 auto;
 }

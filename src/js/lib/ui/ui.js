@@ -1,4 +1,5 @@
 import { Resource } from '../resources/resource'
+import { Store } from '../store/store'
 import { RoundIcon } from '../drawings/round_icon'
 
 export var UI = {
@@ -9,11 +10,22 @@ export var UI = {
       Resource.add("linesOfCode", 1);
     });
 
+    var svg = d3.select("#drawings")
+      .append("svg")
+      .attr("width", 500)
+      .attr("height", 600)
+      .attr("class", "drawings-svg");
+
     // Drawings
     UI.renderDrawings();
   },
 
   renderDrawings: function() {
-    RoundIcon.draw("#drawings");  
+    let update = d3.select("#drawings svg")
+      .selectAll("g")
+      .data(Store.toD3(window._store), function (d) { return d.name });
+
+    RoundIcon.enter(update);
+    RoundIcon.update(update);
   }
 }
