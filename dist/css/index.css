@@ -1,0 +1,17 @@
+body {
+  color: #fff;
+  background-image: linear-gradient(-225deg, #00A1BF 0%, #0D6FC1 48%, #524EA1 100%);
+  font-family: 'Quicksand', sans-serif; }
+
+.logo {
+  left: 20px;
+  top: 20px; }
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 12px; }
+
+/*# sourceMappingURL=index.css.map */
