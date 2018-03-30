@@ -3,6 +3,8 @@ mkdir ./dist/js
 mkdir ./dist/css
 mkdir ./dist/img
 
+echo "## Starting..."
+
 echo "Copy images..."
 cp -r ./src/img/ ./dist/img/
 
@@ -21,3 +23,6 @@ echo "Running Browserify..."
 browserify ./dist/_tmp/js/app.js -o ./dist/js/bundle.js
 
 osascript -e 'display notification "All done" with title "My build"'
+
+echo "## Done!"
+echo ""
