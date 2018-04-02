@@ -6,21 +6,26 @@ export var Store = {
       },
       resources: {
         linesOfCode: 0,
-        cash: 1
+        cash: 1000
       },
       features: {
         value: 0,
-        unlocked: false
+        unlocked: false,
+        lastFeatureAddedAt: 0,
       },
       users: {
         unlocked: false,
+        happinessUnlocked: false,
         count: 0,
-        happiness: 0
-      },
-      server: {
-        unlocked: false
+        happiness: 0,
+        ads: 0
       },
       bugs: {
+        value: 0,
+        unlocked: false
+      },
+      servers: {
+        value: 0,
         unlocked: false
       }
     };
@@ -32,19 +37,27 @@ export var Store = {
     ];
 
     if(store.features.unlocked) {
-      arr.push({ name: "features", value: 0, title: "Features", valueDesc: "features" });
+      arr.push({ name: "features", value: store.features.value, title: "Features", valueDesc: "features" });
     }
 
-    if(store.server.unlocked) {
-      arr.push({ name: "app-server", value: 0, title: "Game Server", valueDesc: "server" });
+    if(store.servers.unlocked) {
+      arr.push({ name: "app-server", value: store.servers.value, title: "Game Server", valueDesc: "server" });
     }
 
     if(store.bugs.unlocked) {
-      arr.push({ name: "bugs", value: 0, title: "Bugs", valueDesc: "bugs", small: true });
+      arr.push({ name: "bugs", value: store.bugs.value, title: "Bugs", valueDesc: "bugs", small: true });
     }
 
     if(store.users.unlocked) {
       arr.push({ name: "user-count", value: store.users.count, title: "Users", valueDesc: "users" });
+    }
+
+    if(store.users.happinessUnlocked) {
+      arr.push({ name: "users-happiness", value: store.users.happiness, title: "Happiness", valueDesc: "happiness", small: true });
+    }
+
+    if(store.users.adsUnclocked) {
+      arr.push({ name: "users-ads", value: store.users.ads, title: "Ads", valueDesc: "ads", small: true });
     }
 
     return arr;

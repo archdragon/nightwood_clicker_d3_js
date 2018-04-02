@@ -31,6 +31,12 @@ export var RoundIcon = {
       case 'user-count':
         pos = { x: 0, y: 140 };
       break;
+      case 'users-happiness':
+        pos = { x: 0, y: 280 };
+      break;
+      case 'users-ads':
+        pos = { x: 0, y: 0 };
+      break;
     }
 
     return "translate(" + pos.x + "," + pos.y + ")";

@@ -9,11 +9,11 @@ var _store = require("../store/store");
 
 var Features = exports.Features = {
   upgradeOptions: function upgradeOptions(store) {
-    return [{ name: "Add new feature", cost: Features.upgradeCost(store.features.value), resource: "loc" }];
+    return [{ id: "new-feature", name: "Add new feature", cost: Features.upgradeCost(store.features.value), resource: "loc" }];
   },
 
   upgradeCost: function upgradeCost(currentLevel) {
-    return 20 * Math.pow(1.02, currentLevel);
+    return Math.ceil(20 * Math.pow(1.04, currentLevel));
   },
 
   unlock: function unlock() {
